@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import Logo from '@/assets/header_logo_2.png';
 import ComputerGuy from '@/components/ComputerGuy.vue';
-import ServerIcon from '@/components/ServerIcon.vue';
 </script>
 
 <template>
