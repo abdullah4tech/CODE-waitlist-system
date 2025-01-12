@@ -5,20 +5,20 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      component: () => import('@/views/Pages/HomeView.vue')
+      component: () => import('@/views/Pages/HomeView.vue'),
     },
     {
       path: '/admin/login',
-      component: () => import('@/views/Auth/LoginView.vue')
+      component: () => import('@/views/Auth/LoginView.vue'),
     },
     {
       path: '/dashboard',
-      component: () => import('@/views/Pages/Dashboard.vue')
+      component: () => import('@/views/Pages/Dashboard.vue'),
     },
     {
       path: '/:catchAll(.*)*',
-      component: () => import('@/views/Error/ErrorPage.vue')
-    }
+      component: () => import('@/views/Error/ErrorPage.vue'),
+    },
   ],
 })
 

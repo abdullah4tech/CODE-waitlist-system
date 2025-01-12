@@ -8,6 +8,10 @@ export default {
     extend: {
       fontFamily: {
         "poppins": "Poppins"
+      },
+      backgroundColor: {
+        "darkmode": "#23233a",
+        "darkmode_secondary": "#2a2a42"
       }
     },
   },
