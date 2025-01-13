@@ -5,94 +5,43 @@ import Logo from '@/assets/header_logo_2.png';
 <template>
   <section class="font-poppins flex h-screen text-indigo-100">
     <!-- Sidebar -->
-    <div class="w-72 flex flex-col items-center bg-darkmode p-[20px]">
-      <img class="w-22 m-5 pb-10" :src="Logo" alt="header_logo">
-      <div class="flex m-5 flex-col items-center gap-16">
-        <div class="flex flex-col gap-2">
+    <div class="w-72 flex flex-col items-baseline p-12">
+      <img class="w-22 pb-10" :src="Logo" alt="header_logo">
+      <div class="flex m-5 flex-col gap-16 w-full">
+        <div class="flex flex-col gap-2 w-full">
           <h1 class="text-2xl">Dashboard</h1>
           <a class="hover:font-semibold" href="#">Users waitlist</a>
           <a class="hover:font-semibold" href="#">Called users</a>
           <a class="hover:font-semibold" href="#">Historys</a>
         </div>
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 w-full">
           <h1 class="text-2xl">Support</h1>
-          <a class="hover:font-semibold" href="#">Having some issues?</a>
+          <a class="hover:font-semibold flex-wrap" href="#">Having some issues?</a>
           <a class="hover:font-semibold" href="#">Feedback</a>
         </div>
       </div>
     </div>
 
     <!-- Main Content -->
-    <div class="bg-darkmode_secondary flex-1 p-[20px]">
-      <div class="flex justify-between m-5">
-        <div class="username">Joshua</div>
+    <div class="flex-1 p-[20px]">
+      <div class="flex justify-between m-5 mb-10">
+        <h2 class="text-xl">Welcome back! John Deo</h2>
         <button class="topup">Top up</button>
       </div>
-      <div class="w-full bg-darkmode h-96 rounded-3xl">
-        <div>
-          <h2>Usage history</h2>
+      <div class="w-full h-96 rounded-3xl overflow-auto p-10" style="background-color: rgba(42, 42, 66, 0.4);">
+        <div class="flex items-center justify-between">
+          <h2 class="text-3xl pb-5">Usage history</h2>
           <button>Refresh</button>
         </div>
-        <p>No data available</p>
+        <p class="font-light">No data available</p>
       </div>
     </div>
   </section>
 </template>
 
-<!-- <style scoped>
-.container {
-  display: flex;
-  height: 100vh;
+<style scoped>
+section {
+  background: rgb(67,67,87);
+  background: linear-gradient(120deg, rgba(35, 35, 58, 1) 0%, rgba(34, 48, 29, 1) 50%, rgba(35, 35, 58, 1) 100%);
 }
-.sidebar {
-  width: 250px;
-  background-color: #23233a;
-  padding: 20px;
-  box-sizing: border-box;
-}
-.sidebar a {
-  display: block;
-  color: #ffffff;
-  text-decoration: none;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-.sidebar a:hover {
-  color: #00ccff;
-}
-.main-content {
-  flex: 1;
-  padding: 20px;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.header .username {
-  font-size: 18px;
-}
-.header .topup {
-  background-color: #00ccff;
-  color: #23233a;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.card {
-  background-color: #2a2a42;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-.footer {
-  margin-top: 20px;
-}
-.footer a {
-  color: #00ccff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-</style> -->
+</style>
