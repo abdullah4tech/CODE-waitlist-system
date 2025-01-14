@@ -23,22 +23,100 @@ import Logo from '@/assets/header_logo_2.png'
     </div>
 
     <!-- Main Content -->
-    <div class="flex-1 p-[20px]">
-      <div class="flex justify-between m-5 mb-10">
-        <h2 class="text-xl">Welcome back! John Deo</h2>
-        <button class="topup">Top up</button>
+    <div class="flex-1 p-5">
+  <!-- Header Section -->
+  <div class="flex justify-between items-center mb-10">
+    <h2 class="text-xl font-bold">Welcome Back, John Doe!</h2>
+    <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
+      Top Up
+    </button>
+  </div>
+
+  <!-- Waitlist Section -->
+  <div
+    class="w-full h-96 rounded-3xl overflow-auto p-6 bg-opacity-40 bg-gray-700 shadow-lg"
+  >
+    <div class="flex items-center border-b pb-3 justify-between mb-4">
+      <h2 class="text-2xl font-semibold">Waitlist</h2>
+      <button class="text-blue-500 hover:text-blue-600 transition">
+        Refresh
+      </button>
+    </div>
+
+    <!-- Waitlist Items -->
+    <div class="space-y-4">
+      <!-- Single Waitlist Entry -->
+      <div
+        class="flex items-center justify-between p-4 bg-gray-100 rounded-md shadow-sm"
+      >
+        <div>
+          <p class="font-medium text-slate-900">James Brima</p>
+          <p class="text-sm text-gray-500">+23231353914</p>
+        </div>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          Call
+        </button>
+      </div>
+
+      <div
+        class="flex items-center justify-between p-4 bg-gray-100 rounded-md shadow-sm"
+      >
+        <div>
+          <p class="font-medium text-slate-900">Mary Johnson</p>
+          <p class="text-sm text-gray-500">+23276543210</p>
+        </div>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          Call
+        </button>
+      </div>
+
+      <div
+        class="flex items-center justify-between p-4 bg-gray-100 rounded-md shadow-sm"
+      >
+        <div>
+          <p class="font-medium text-slate-900">Paul Adams</p>
+          <p class="text-sm text-gray-500">+23278965432</p>
+        </div>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          Call
+        </button>
       </div>
       <div
-        class="w-full h-96 rounded-3xl overflow-auto p-10"
-        style="background-color: rgba(42, 42, 66, 0.4)"
+        class="flex items-center justify-between p-4 bg-gray-100 rounded-md shadow-sm"
       >
-        <div class="flex items-center justify-between">
-          <h2 class="text-3xl pb-5">Usage history</h2>
-          <button>Refresh</button>
+        <div>
+          <p class="font-medium text-slate-900">Paul Adams</p>
+          <p class="text-sm text-gray-500">+23278965432</p>
         </div>
-        <p class="font-light">No data available</p>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          Call
+        </button>
+      </div>
+      <div
+        class="flex items-center justify-between p-4 bg-gray-100 rounded-md shadow-sm"
+      >
+        <div>
+          <p class="font-medium text-slate-900">Paul Adams</p>
+          <p class="text-sm text-gray-500">+23278965432</p>
+        </div>
+        <button
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          Call
+        </button>
       </div>
     </div>
+  </div>
+</div>
+
   </section>
 </template>
 
