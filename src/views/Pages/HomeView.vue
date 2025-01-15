@@ -17,7 +17,7 @@ const toggleDropdown = () => {
   dropdownOpen.value = !dropdownOpen.value;
 };
 
-const selectCourse = (course) => {
+const selectCourse = (course:string) => {
   selectedCourse.value = course;
   dropdownOpen.value = false;
 };
@@ -133,14 +133,6 @@ const selectCourse = (course) => {
               </div>
             </div>
           </div>
-          <!-- <div class="flex flex-col col-span-1 sm:col-span-2 gap-2">
-            <label class="text-sm" for="">Message</label>
-            <textarea
-              name=""
-              class="border px-3 py-2 text-sm h-24 w-full outline-none rounded focus:border-black transition-all resize-none"
-              placeholder="Enter your message"
-            ></textarea>
-          </div> -->
         </div>
         <div class="flex items-start gap-2">
           <input id="check" class="h-4 w-4" type="checkbox" />
