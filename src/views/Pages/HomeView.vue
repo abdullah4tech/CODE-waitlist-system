@@ -1,6 +1,26 @@
 <script setup lang="ts">
-import Logo from '@/assets/header_logo_2.png'
-import ComputerGuy from '@/components/ComputerGuy.vue'
+import Logo from '@/assets/header_logo_2.png';
+import ComputerGuy from '@/components/ComputerGuy.vue';
+import { ref } from 'vue';
+
+const dropdownOpen = ref(false);
+const selectedCourse = ref('');
+const courses = ref([
+  'Software Engineering',
+  'Infrastructural Management System',
+  'Bachelor of Computer Application',
+  'Bachelor of Business Administration',
+  'CCNA-CCNP',
+]);
+
+const toggleDropdown = () => {
+  dropdownOpen.value = !dropdownOpen.value;
+};
+
+const selectCourse = (course) => {
+  selectedCourse.value = course;
+  dropdownOpen.value = false;
+};
 </script>
 
 <template>
@@ -66,37 +86,61 @@ import ComputerGuy from '@/components/ComputerGuy.vue'
             />
           </div>
           <div class="flex flex-col gap-2">
-            <label class="text-sm" for="">Address</label>
+            <label class="text-sm" for="">Last Qualification</label>
             <input
               class="border px-3 text-sm h-10 w-full transition-all outline-none rounded focus:border-black"
-              placeholder="123 Main St"
+              placeholder="Bachelor's Degree in Computer..."
               type="text"
             />
           </div>
           <div class="flex flex-col gap-2">
-            <label class="text-sm" for="">City</label>
+            <label class="text-sm" for="">Wassce Result</label>
             <input
               class="border px-3 text-sm h-10 w-full transition-all outline-none rounded focus:border-black"
-              placeholder="City"
+              placeholder="7 A's, 2 B's"
               type="text"
             />
           </div>
           <div class="flex flex-col gap-2">
-            <label class="text-sm" for="">State</label>
-            <input
-              class="border px-3 text-sm h-10 w-full transition-all outline-none rounded focus:border-black"
-              placeholder="State"
-              type="text"
-            />
+            <label class="text-sm" for="course">Interested Course</label>
+            <div class="relative">
+              <!-- Input Field -->
+              <input
+                id="course"
+                class="border px-3 text-sm h-10 w-full transition-all outline-none rounded focus:border-black cursor-pointer"
+                placeholder="Select a course"
+                type="text"
+                readonly
+                @click="toggleDropdown"
+                :value="selectedCourse"
+              />
+
+              <!-- Dropdown Menu -->
+              <div
+                v-show="dropdownOpen"
+                class="absolute top-full left-0 right-0 bg-white border mt-1 rounded shadow-lg z-10 max-h-60 overflow-auto"
+              >
+                <ul class="flex flex-col">
+                  <li
+                    v-for="course in courses"
+                    :key="course"
+                    class="px-3 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                    @click="selectCourse(course)"
+                  >
+                    {{ course }}
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col col-span-1 sm:col-span-2 gap-2">
+          <!-- <div class="flex flex-col col-span-1 sm:col-span-2 gap-2">
             <label class="text-sm" for="">Message</label>
             <textarea
               name=""
               class="border px-3 py-2 text-sm h-24 w-full outline-none rounded focus:border-black transition-all resize-none"
               placeholder="Enter your message"
             ></textarea>
-          </div>
+          </div> -->
         </div>
         <div class="flex items-start gap-2">
           <input id="check" class="h-4 w-4" type="checkbox" />
@@ -107,7 +151,7 @@ import ComputerGuy from '@/components/ComputerGuy.vue'
       </div>
 
       <!-- Submit Button -->
-      <div class="flex items-center justify-center mb-5">
+      <div class="flex items-center justify-center">
         <button
           class="bg-black hover:opacity-85 active:opacity-75 transition-all text-white text-xs sm:text-sm px-6 py-3 sm:px-9 sm:py-3 shadow-md"
         >
