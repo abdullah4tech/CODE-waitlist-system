@@ -1,25 +1,24 @@
 <script setup lang="ts">
-import Logo from '@/assets/header_logo_2.png';
-import UserCalled from '@/components/UserCalled.vue';
-import WaitListHistory from '@/components/WaitListHistory.vue';
-import WaitLists from '@/components/WaitLists.vue';
-import { ref } from 'vue';
+import Logo from '@/assets/header_logo_2.png'
+import UserCalled from '@/components/UserCalled.vue'
+import WaitListHistory from '@/components/WaitListHistory.vue'
+import WaitLists from '@/components/WaitLists.vue'
+import { ref } from 'vue'
 
-
-const currentComponent = ref('');
+const currentComponent = ref('')
 
 const renderComponent = (component: string) => {
-  currentComponent.value = component;
-};
+  currentComponent.value = component
+}
 
-const isSpinning = ref(false);
+const isSpinning = ref(false)
 
 const spinSVG = () => {
-  isSpinning.value = true;
+  isSpinning.value = true
   setTimeout(() => {
-    isSpinning.value = false;
-  }, 1000);
-};
+    isSpinning.value = false
+  }, 1000)
+}
 </script>
 
 <template>
@@ -30,18 +29,18 @@ const spinSVG = () => {
       <div class="flex h-full m-5 justify-between flex-col gap-16 w-full">
         <div class="flex flex-col gap-2 w-full">
           <h1 class="text-2xl">Dashboard</h1>
+          <a class="hover:font-semibold" href="#" @click.prevent="renderComponent('WaitLists')"
+            >Users waitlist</a
+          >
+          <a class="hover:font-semibold" href="#" @click.prevent="renderComponent('UserCalled')"
+            >Called users</a
+          >
           <a
-            class="hover:font-semibold" href="#"
-            @click.prevent="renderComponent('WaitLists')"
-          >Users waitlist</a>
-          <a
-            class="hover:font-semibold" href="#"
-            @click.prevent="renderComponent('UserCalled')"
-          >Called users</a>
-          <a
-            class="hover:font-semibold" href="#"
+            class="hover:font-semibold"
+            href="#"
             @click.prevent="renderComponent('WaitListHistory')"
-          >Historys</a>
+            >Historys</a
+          >
         </div>
         <div class="flex flex-col gap-2 w-full">
           <h1 class="text-2xl">Support</h1>
@@ -55,10 +54,23 @@ const spinSVG = () => {
     <div class="flex-1 p-5">
       <!-- Header Section -->
       <div class="flex justify-between items-center mb-10">
-        <h2 class="text-xl ">Welcome Back, <span class="font-semibold">John Doe!</span></h2>
-        <button class="bg-red-500 flex gap-2 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9" />
+        <h2 class="text-xl mt-7">Welcome Back, <span class="font-semibold">John Doe!</span></h2>
+        <button
+          class="bg-red-500 flex gap-2 text-white px-4 py-2 rounded-md hover:bg-red-600 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+            />
           </svg>
           <span>Logout</span>
         </button>
@@ -71,8 +83,20 @@ const spinSVG = () => {
         <div class="sticky flex items-center pb-3 justify-between mb-4">
           <h2 class="text-2xl font-semibold">Waitlist</h2>
           <button @click="spinSVG" class="text-blue-500 flex gap-2 hover:text-blue-600 transition">
-            <svg :class="{ 'svg-spin': isSpinning }" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+            <svg
+              :class="{ 'svg-spin': isSpinning }"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+              />
             </svg>
             <span>Refresh</span>
           </button>
@@ -90,7 +114,6 @@ const spinSVG = () => {
         <div v-show="currentComponent === ''" class="text-center text-gray-400">
           <WaitLists />
         </div>
-
       </div>
     </div>
   </section>

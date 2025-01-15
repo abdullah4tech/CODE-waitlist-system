@@ -1,26 +1,39 @@
 <script setup lang="ts">
-import Logo from '@/assets/header_logo_2.png';
-import ComputerGuy from '@/components/ComputerGuy.vue';
-import { ref } from 'vue';
+import Logo from '@/assets/header_logo_2.png'
+import ComputerGuy from '@/components/ComputerGuy.vue'
+import { ref } from 'vue'
 
-const dropdownOpen = ref(false);
-const selectedCourse = ref('');
+const dropdownOpen = ref(false)
+const selectedCourse = ref('')
 const courses = ref([
   'Software Engineering',
   'Infrastructural Management System',
   'Bachelor of Computer Application',
   'Bachelor of Business Administration',
   'CCNA-CCNP',
-]);
+])
 
 const toggleDropdown = () => {
-  dropdownOpen.value = !dropdownOpen.value;
-};
+  dropdownOpen.value = !dropdownOpen.value
+}
 
-const selectCourse = (course:string) => {
-  selectedCourse.value = course;
-  dropdownOpen.value = false;
-};
+const selectCourse = (course: string) => {
+  selectedCourse.value = course
+  dropdownOpen.value = false
+}
+
+const timeropdown = ref<boolean>(false)
+const selectedTime = ref('')
+const Timing = ref<object>(['Morning Class', 'Afternoon Class', 'Evening Class'])
+
+const toggleTimeDropdown = () => {
+  timeropdown.value = !timeropdown.value
+}
+
+const selectTime = (time: string) => {
+  selectedTime.value = time
+  timeropdown.value = false
+}
 </script>
 
 <template>
@@ -128,6 +141,36 @@ const selectCourse = (course:string) => {
                     @click="selectCourse(course)"
                   >
                     {{ course }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 md:col-span-2">
+            <label class="text-sm" for="time">Preferred Class Timinng</label>
+            <div class="relative">
+              <input
+                id="time"
+                class="border px-3 text-sm h-10 w-full transition-all outline-none rounded focus:border-black cursor-pointer"
+                placeholder="Select a time"
+                type="text"
+                readonly
+                @click="toggleTimeDropdown"
+                :value="selectedTime"
+              />
+
+              <div
+                v-show="timeropdown"
+                class="absolute top-full left-0 right-0 bg-white border mt-1 rounded shadow-lg z-10 max-h-60 overflow-auto"
+              >
+                <ul class="flex flex-col">
+                  <li
+                    v-for="time in Timing"
+                    :key="time"
+                    class="px-3 py-2 text-sm hover:bg-gray-100 cursor-pointer"
+                    @click="selectTime(time)"
+                  >
+                    {{ time }}
                   </li>
                 </ul>
               </div>

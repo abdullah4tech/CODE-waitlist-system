@@ -1,32 +1,29 @@
 <script setup lang="ts">
-
 const users = [
   {
     name: 'James Brima',
-    phone: '+23231353914'
+    phone: '+23231353914',
   },
   {
     name: 'Mary Johnson',
-    phone: '+23276543210'
+    phone: '+23276543210',
   },
   {
     name: 'Paul Adams',
-    phone: '+23278965432'
+    phone: '+23278965432',
   },
   {
     name: 'Paul Adams',
-    phone: '+23278965432'
+    phone: '+23278965432',
   },
   {
-    name: "John Franklin",
-    phone: "+23279584876"
-  }
+    name: 'John Franklin',
+    phone: '+23279584876',
+  },
 ]
-
 </script>
 
 <template>
-
   <!-- Waitlist Items -->
   <div class="space-y-4">
     <!-- Single Waitlist Entry -->
@@ -35,7 +32,7 @@ const users = [
       :key="index"
       class="flex items-center justify-between p-4 bg-opacity-40 bg-gray-700 rounded-md shadow-sm"
     >
-      <div>
+      <div class="text-left">
         <p class="font-medium text-slate-200">{{ i.name }}</p>
         <p class="text-sm text-gray-500">+23231353914</p>
       </div>
@@ -50,5 +47,3 @@ const users = [
     </div>
   </div>
 </template>
-
-
