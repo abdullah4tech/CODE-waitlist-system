@@ -6,7 +6,7 @@ const isVisible = ref<boolean>(false)
 
 <template>
   <section class="font-poppins flex justify-center items-center h-screen">
-    <div class="w-[25%] p-9 border border-gray-600">
+    <div class="w-[30%] p-9 border border-gray-600">
       <div class="mb-5 flex flex-col gap-2">
         <h1 class="text-7xl">Login</h1>
         <p class="text-xs text-slate-700">Welcome back!</p>
